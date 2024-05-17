@@ -14,6 +14,7 @@ channel_secret = os.getenv('LINE_CHANNEL_SECRET')
 openai_api_key = os.getenv('OPENAI_API_KEY')
 
 app = FastAPI()
+logger = logging.getLogger('uvicorn')
 
 linebot = LineBotApi(channel_access_token)
 handler = WebhookHandler(channel_secret)
